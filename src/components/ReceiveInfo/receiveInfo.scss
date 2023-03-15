@@ -1,0 +1,78 @@
+@import "../../sass/_mixin";
+@import "../../sass/_variables";
+
+.receive {
+  &__container {
+    img {
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    width: 100%;
+    max-width: 500px;
+    // min-height: 150px;
+    margin: 0 auto;
+    @include absolute;
+    background-color: #9a90906f;
+    padding: 10px 20px;
+
+    h1 {
+      font-size: $fs-22;
+    }
+    p {
+      font-size: $fs-16;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .receive {
+    &__content {
+      padding: 10px;
+      h1 {
+        font-size: $fs-18;
+      }
+      p {
+        font-size: $fs-14;
+      }
+    }
+  }
+}
+@media (max-width: 820px) {
+  .receive {
+    &__content {
+      h1 {
+        font-size: $fs-16;
+      }
+      p {
+        font-size: $fs-14;
+      }
+    }
+    .input {
+      input {
+        width: 50% !important;
+        padding: 7px 10px !important;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .receive {
+    &__content {
+      h1 {
+        font-size: $fs-14;
+      }
+      p {
+        font-size: $fs-13;
+      }
+    }
+    .input {
+      margin-top: 5px !important;
+      input {
+        width: 50% !important;
+        padding: 7px 10px !important;
+      }
+    }
+  }
+}

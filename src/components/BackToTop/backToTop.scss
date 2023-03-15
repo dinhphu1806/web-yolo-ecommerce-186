@@ -1,0 +1,26 @@
+.back-to-top {
+  position: fixed;
+  right: 0;
+  bottom: 15%;
+  // padding: 30px;
+  cursor: pointer;
+  //   animation: backToTop 1.2s linear infinite;
+  // animation: backToTop 1.2s linear infinite alternate-reverse;
+  transition: ease-in-out 0.3s linear;
+  // @keyframes backToTop {
+  //   0% {
+  //     transform: translateY(-0.5rem);
+  //   }
+  //   100% {
+  //     transform: translateY(1rem);
+  //   }
+  // }
+}
+.back-to-top svg {
+  width: 35px;
+  height: 35px;
+  color: #ccc;
+  &:hover {
+    color: #6d6767;
+  }
+}

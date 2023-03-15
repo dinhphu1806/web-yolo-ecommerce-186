@@ -1,0 +1,16 @@
+.pay {
+  button {
+    &:hover {
+      background-color: #1976d2 !important;
+      transition: all 0.3s linear;
+    }
+  }
+}
+@media (max-width: 460px) {
+  .text__title {
+    font-size: 14px;
+  }
+  .buy__btn {
+    text-transform: uppercase !important;
+  }
+}

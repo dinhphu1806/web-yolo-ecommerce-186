@@ -1,0 +1,44 @@
+@import "../sass/_mixin";
+@import "../sass/_variables";
+
+.modal {
+  &__container {
+    position: relative;
+  }
+  // &__overlay {
+  //   background-color: #ccc;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100vh;
+  //   z-index: 1;
+  // }
+  @include fixed(40%, 50%);
+  width: 100%;
+  max-width: 600px;
+  //   margin: 0 auto;
+  min-height: 400px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  &__close {
+    @include absoluteTopRight(0, 0);
+    border: 1px solid #ccc;
+    &:hover {
+      background-color: #b85757;
+      cursor: pointer;
+      color: $color-white;
+      transition: all 0.2s linear;
+    }
+  }
+  // &__overlay {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   width: 100%;
+  //   height: 100vh;
+  //   background-color: #ccc;
+  // }
+}

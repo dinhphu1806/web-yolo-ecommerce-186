@@ -1,0 +1,450 @@
+// bg
+$bg-header: rgba(247, 239, 239, 0.918);
+$bg-black: #000;
+$bg-white: #fff;
+$bg-grey: #808080;
+
+//color
+$color-black: #000;
+$color-white: #fff;
+$color-regal-blue: #103755;
+$color-gold: #eeb808;
+$color-light-blue: #707b8e;
+$color-pine-green: #63766b;
+$color-ghost-white: #f8f8fa;
+$color-dark: #575f64a1;
+$color-red: #ce4f4b;
+
+// font-family
+$fontPopins: "Poppins", sans-serif;
+
+// transition
+$transition: all 300ms linear;
+
+// height
+$fontSize-header-desktop: 18px;
+$fontSize-header-mobile: 16px;
+
+// header-height
+$header-height-desktop: 70px;
+$header-height-tablet: 60px;
+$header-height-mobile: 50px;
+
+// font-size
+$fs-12: 12px;
+$fs-13: 13px;
+$fs-14: 14px;
+$fs-15: 15px;
+$fs-16: 16px;
+$fs-17: 17px;
+$fs-18: 18px;
+$fs-19: 19px;
+$fs-20: 20px;
+$fs-22: 22px;
+$fs-24: 24px;
+$fs-26: 26px;
+$fs-28: 28px;
+$fs-30: 30px;
+// text   className
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-start {
+    text-align: left;
+  }
+  &-end {
+    text-align: right;
+  }
+  &-justify {
+    text-align: justify;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-capitalize {
+    text-transform: capitalize;
+  }
+  // &-regal-blue {
+  //   color: $color-regal-blue;
+  // }
+  // &-gold {
+  //   color: $color-gold;
+  // }
+  // &-light-blue {
+  //   color: $color-light-blue;
+  // }
+  // &-pine-green {
+  //   color: $color-pine-green;
+  // }
+  &-white {
+    color: $color-white;
+  }
+  &-black {
+    color: $color-black;
+  }
+  // &-ghost-white {
+  //   color: $color-ghost-white;
+  // }
+  // &-red {
+  //   color: $color-red;
+  // }
+  //   &-grey {
+  //     color: #4e4848b7;
+  //   }
+}
+
+// bg   -className
+.bg {
+  &-black {
+    background-color: $color-black;
+  }
+  &-white {
+    background-color: $color-white;
+  }
+  // &-regal-blue {
+  //   background-color: $color-regal-blue;
+  // }
+  // &-gold {
+  //   background-color: $color-gold;
+  // }
+  // &-light-blue {
+  //   background-color: $color-light-blue;
+  // }
+  // &-pine-green {
+  //   background-color: $color-pine-green;
+  // }
+  // &-ghost-white {
+  //   background-color: $color-ghost-white;
+  // }
+  // &-dark {
+  //   background-color: $color-dark;
+  // }
+}
+
+// fonsize className
+.fs {
+  &-12 {
+    font-size: 12px;
+  }
+  &-13 {
+    font-size: 13px;
+  }
+  &-14 {
+    font-size: 14px;
+  }
+  &-15 {
+    font-size: 15px;
+  }
+  &-16 {
+    font-size: 16px;
+  }
+  &-17 {
+    font-size: 17px;
+  }
+  &-18 {
+    font-size: 18px;
+  }
+  &-19 {
+    font-size: 19px;
+  }
+  &-20 {
+    font-size: 20px;
+  }
+  &-21 {
+    font-size: 21px;
+  }
+  &-22 {
+    font-size: 22px;
+  }
+  &-23 {
+    font-size: 23px;
+  }
+  &-24 {
+    font-size: 24px;
+  }
+  &-25 {
+    font-size: 25px;
+  }
+  &-26 {
+    font-size: 26px;
+  }
+  &-27 {
+    font-size: 27px;
+  }
+  &-28 {
+    font-size: 28px;
+  }
+  &-29 {
+    font-size: 29px;
+  }
+  &-30 {
+    font-size: 30px;
+  }
+  &-31 {
+    font-size: 31px;
+  }
+  &-32 {
+    font-size: 32px;
+  }
+  &-36 {
+    font-size: 36px;
+  }
+  &-43 {
+    font-size: 43px;
+  }
+}
+
+// letter spacing className
+.ls-1 {
+  letter-spacing: 1px;
+}
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+// width, height 100%
+.w-full {
+  width: 100%;
+}
+
+// margin and padding className
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+.py-5 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.py {
+  &-1 {
+    padding: 10px 0;
+  }
+  &-2 {
+    padding: 20px 0;
+  }
+  &-3 {
+    padding: 30px 0;
+  }
+  &-4 {
+    padding: 40px 0;
+  }
+  &-5 {
+    padding: 50px 0;
+  }
+}
+.px {
+  &-1 {
+    padding: 0 10px;
+  }
+  &-2 {
+    padding: 0 20px;
+  }
+  &-3 {
+    padding: 0 30px;
+  }
+  &-4 {
+    padding: 0 40px;
+  }
+  &-5 {
+    padding: 0 50px;
+  }
+}
+.mt {
+  &-1 {
+    margin-top: 10px;
+  }
+  &-2 {
+    margin-top: 20px;
+  }
+  &-3 {
+    margin-top: 30px;
+  }
+  &-4 {
+    margin-top: 40px;
+  }
+  &-5 {
+    margin-top: 50px;
+  }
+}
+.mb {
+  &-1 {
+    margin-bottom: 10px;
+  }
+  &-2 {
+    margin-bottom: 20px;
+  }
+  &-3 {
+    margin-bottom: 30px;
+  }
+  &-4 {
+    margin-bottom: 40px;
+  }
+  &-5 {
+    margin-bottom: 50px;
+  }
+}
+.ml {
+  &-1 {
+    margin-left: 10px;
+  }
+  &-2 {
+    margin-left: 20px;
+  }
+  &-3 {
+    margin-left: 30px;
+  }
+  &-4 {
+    margin-left: 40px;
+  }
+  &-5 {
+    margin-left: 50px;
+  }
+}
+.mr {
+  &-1 {
+    margin-right: 10px;
+  }
+  &-2 {
+    margin-right: 20px;
+  }
+  &-3 {
+    margin-right: 30px;
+  }
+  &-4 {
+    margin-right: 40px;
+  }
+  &-5 {
+    margin-right: 50px;
+  }
+}
+.my {
+  &-2 {
+    margin: 20px 0;
+  }
+  &-3 {
+    margin: 30px 0;
+  }
+  &-4 {
+    margin: 40px 0;
+  }
+}
+
+.p {
+  &-1 {
+    padding: 10px;
+  }
+  &-2 {
+    padding: 20px;
+  }
+  &-3 {
+    padding: 30px;
+  }
+}
+/* flexbox and grid */
+.flex {
+  display: flex;
+  align-items: center;
+
+  &-column {
+    flex-direction: column;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-between {
+    justify-content: space-between;
+  }
+  &-evenly {
+    justify-content: space-evenly;
+  }
+  &-around {
+    justify-content: space-around;
+  }
+  &-start {
+    justify-content: flex-start;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+// font-weight className
+.fw {
+  &-300 {
+    font-weight: 300;
+  }
+  &-400 {
+    font-weight: 400;
+  }
+  &-500 {
+    font-weight: 500;
+  }
+  &-600 {
+    font-weight: 600;
+  }
+  &-700 {
+    font-weight: 700;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0.6rem;
+}
+.secsion {
+  margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .heading__product {
+    margin: 30px 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .heading__product {
+    margin: 15px 0;
+  }
+}
+// .grid {
+//   display: grid;
+// }
+
+// .grid-col-0 {
+//   grid-template-columns: repeat(0, 1fr);
+// }
+
+// .grid-col-1 {
+//   grid-template-columns: repeat(1, 1fr);
+// }
+
+// .grid-col-2 {
+//   grid-template-columns: repeat(2, 1fr);
+// }
+
+// .grid-col-3 {
+//   grid-template-columns: repeat(3, 1fr);
+// }
+
+// .grid-col-4 {
+//   grid-template-columns: repeat(4, 1fr);
+// }
+.relative {
+  position: relative;
+}
+.active {
+  font-weight: bold;
+}
+.uppercase {
+  text-transform: uppercase;
+}

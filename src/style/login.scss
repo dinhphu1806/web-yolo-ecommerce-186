@@ -1,0 +1,146 @@
+@import "../sass/_mixin";
+.login {
+  &__body {
+    width: 100%;
+    // max-width: 100%;
+    min-height: 450px;
+    // padding: 30px 10px;
+    &__container {
+      @include absolute;
+      width: 100%;
+      max-width: 500px;
+      min-height: 300px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      .form {
+        .field__txt {
+          display: flex;
+          flex-direction: column;
+          input {
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            font-size: 14px;
+            background-color: #847c7c30;
+            &:focus {
+              border: none;
+              //   border: 1px solid #000;
+              border-bottom: 2px solid #6c6666;
+              transition: all 0.2s linear;
+              box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            }
+            &::placeholder {
+              font-size: 14px;
+              font-style: italic;
+              color: #6e6363;
+            }
+          }
+        }
+        button {
+          background-color: #000;
+          color: #fff;
+          padding: 7px 20px;
+        }
+        .btn {
+          a {
+            color: #000;
+            &:hover {
+              text-decoration: underline;
+              transition: all 0.2s linear;
+              cursor: pointer;
+            }
+          }
+        }
+        span {
+          a {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__with {
+    .flex {
+      button {
+        width: 100%;
+        max-width: 120px;
+        // margin: 0 auto;
+        padding: 5px 7px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .login {
+    &__body {
+      &__container {
+        .form {
+          .btn {
+            a {
+              color: #000;
+            }
+          }
+          span {
+            font-size: 13px !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .login {
+    &__body {
+      &__container {
+        margin-top: -10px !important;
+        // margin: 5px !important;
+        // h1 {
+        //   margin-top: -30px !important;
+        // }
+      }
+    }
+
+    &__with {
+      .flex {
+        button {
+          padding: 4px 7px !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 390px) {
+  .login {
+    &__body {
+      &__container {
+        .form {
+          .btn {
+            a {
+              color: #000;
+            }
+          }
+          span {
+            font-size: 12px !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 290px) {
+  .login {
+    &__body {
+      &__container {
+        h1 {
+          font-size: 16px;
+          h1 {
+            margin-top: 0px !important;
+          }
+        }
+        margin: 0 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.page {
+  width: 25px;
+  height: 25px;
+  display: block;
+  padding: 10px;
+  border: solid #ccc;
+  :hover {
+    background-color: #ccc;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+}
+// select
+// .active {
+//   background-color: #a38383;
+//   color: #fff;
+// }
+@media (max-width: 678px) {
+  .product {
+    &__category {
+      justify-content: flex-start !important;
+      flex-direction: column;
+    }
+  }
+}

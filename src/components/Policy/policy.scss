@@ -1,0 +1,114 @@
+@import "../../sass/_variables";
+@import "../../sass/_mixin";
+
+.policy-card {
+  margin-top: 30px;
+}
+.policy__card {
+  // display: flex;
+  // align-items: center;
+  // padding: 20px 0;
+
+  @include flex(flex-start, center);
+  padding: 10px 20px;
+  transition: transform 0.5s ease;
+  box-shadow: 0 8px 24px hsl(210deg 8% 62% / 20%);
+  // border: 1px solid #ccc;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-10px);
+  }
+  &__icon {
+    margin-right: 10px;
+  }
+  &__title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  &__desc {
+    font-size: $fs-13;
+    color: #8d8d8d;
+  }
+}
+@media (max-width: 1300px) {
+  .policy-card {
+    padding: 10px !important;
+  }
+  .policy__card {
+    padding: 20px;
+    &__icon {
+      margin-right: 10px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .policy__card {
+    padding: 10px;
+    // &__icon {
+    //   margin-right: 20px;
+    // }
+    &__title {
+      font-size: 0.8rem;
+    }
+    &__desc {
+      font-size: $fs-12;
+    }
+  }
+}
+@media (max-width: 910px) {
+  .policy__card {
+    &__title {
+      font-size: 0.9rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .policy__card {
+    // padding: 20px;
+    &__icon {
+      font-size: $fs-22;
+      margin-right: 10px;
+    }
+    &__title {
+      font-size: 1rem;
+    }
+    &__desc {
+      font-size: $fs-12;
+    }
+  }
+}
+// .policy-card {
+//     @include flex(center, flex-start);
+//     padding: 20px;
+//     padding-left: 0;
+//     // box-shadow: $box-shadow;
+//     transition: transform 0.5s ease;
+
+//     &:hover {
+//         transform: translateY(-20px);
+//     }
+
+//     &__icon {
+//         @include flex(center, center);
+//         width: 30%;
+//         // color: $main-color;
+
+//         i {
+//             font-size: 3rem;
+//         }
+//     }
+
+//     &__info {
+//         &__title {
+//             font-size: 1.25rem;
+//             font-weight: 600;
+//             margin-bottom: 10px;
+//         }
+
+//         &__desc {
+//             font-size: 1rem;
+//             // color: $txt-second-color;
+//         }
+//     }
+// }

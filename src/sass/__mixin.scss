@@ -1,0 +1,29 @@
+@mixin flex($justifyContent, $alignItems) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin fixed($top, $left) {
+  position: fixed;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absoluteTopRight($top, $right) {
+  position: absolute;
+  top: $top;
+  right: $right;
+}
+@mixin absoluteTopLeft($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}

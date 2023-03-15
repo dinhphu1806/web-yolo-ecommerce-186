@@ -1,0 +1,37 @@
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  width: 100%;
+  max-width: 400px;
+}
+.MuiInputBase-formControl
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  width: 100%;
+  max-width: 400px;
+}
+
+.css-15v22id-MuiAccordionDetails-root {
+  padding: 5px 15px !important;
+  cursor: pointer;
+  p {
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}
+.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 35px !important;
+  padding: 0 !important;
+}
+.css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
+  margin: 0 !important;
+}
+.flex {
+  input {
+    &:focus {
+      border-bottom: 2px solid #ccc;
+    }
+    &::placeholder {
+      color: #7c707096;
+      font-size: 14px;
+    }
+  }
+}

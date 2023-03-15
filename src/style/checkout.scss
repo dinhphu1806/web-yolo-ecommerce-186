@@ -1,0 +1,62 @@
+// .css-1epo2yx-MuiPaper-root {
+//   box-shadow: none !important;
+// }
+.css-10botns-MuiInputBase-input-MuiFilledInput-input {
+  border: 1px solid #ccc !important;
+  background-color: #ffffff79 !important;
+  //   padding: 10px 20px;
+  //   padding-bottom: 0 !important;
+}
+.css-2s8iqf-MuiPaper-root,
+.MuiPaper-elevation {
+  box-shadow: none !important;
+}
+.css-66dh3a-MuiInputBase-input-MuiInput-input {
+  background-color: #ffffff79 !important;
+  border: 1px solid #ccc !important;
+}
+.fa-address-card {
+  display: none;
+}
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  font-size: 0.8rem;
+}
+.shiper {
+  display: none;
+}
+// input code sale
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 17px 14px !important;
+}
+// button
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  padding: 4px 20px !important;
+  // font-size: 12px !impo;
+}
+
+// backgroung input
+.css-10botns-MuiInputBase-input-MuiFilledInput-input {
+  background-color: #ebe8e8 !important;
+}
+.back__cart {
+  a {
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      color: black;
+      span {
+        &:first-child {
+          color: blue;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .fa-address-card {
+    display: block;
+  }
+  .shiper {
+    display: block;
+  }
+}

@@ -1,0 +1,48 @@
+@import "../sass/_variables";
+
+.accessory {
+  //   &__container {
+  //     max-width: 1200px;
+  //     margin: 0 auto;
+  //   }
+  &__title {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    h1 {
+      margin-right: 20px;
+    }
+  }
+  button {
+    font-size: $fs-13 !important;
+    font-weight: 700 !important;
+    text-transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .accessory {
+    &__title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .accessory {
+    &__title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__list {
+      overflow-x: scroll !important;
+    }
+  }
+  button {
+    font-size: 12px !important;
+    text-transform: capitalize !important;
+    padding: 10px !important;
+  }
+}

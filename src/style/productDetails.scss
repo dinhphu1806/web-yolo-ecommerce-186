@@ -1,0 +1,76 @@
+.css-1qgzfll-MuiPaper-root {
+  box-shadow: none !important;
+}
+.code__product {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .product__details__title {
+    div {
+      margin-left: 20px;
+    }
+  }
+}
+@media (max-width: 460px) {
+  .product__details__title {
+    span {
+      margin: 3px !important;
+    }
+  }
+  .code__product {
+    display: flex;
+    flex-direction: column;
+  }
+  .quantity__icon {
+    padding: 0 10px !important;
+    // button {
+    //   margin-right: 10px;
+    //   margin-left: 10px;
+    // }
+  }
+  .add__cart {
+    button {
+      border-radius: 15px;
+      text-transform: uppercase;
+    }
+  }
+  .advise {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .product__details__title {
+    a {
+      font-size: 13px !important;
+    }
+  }
+  .ship {
+    p {
+      font-size: 13px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .product__details__title {
+    div {
+      margin-left: 10px;
+    }
+    a,
+    p {
+      font-size: 12px !important;
+    }
+    span {
+      margin: 0px !important;
+    }
+  }
+}
+
+@media (max-width: 327px) {
+  .product__details__title {
+    a,
+    p {
+      font-size: 11px !important;
+    }
+  }
+}

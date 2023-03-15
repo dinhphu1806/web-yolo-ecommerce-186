@@ -1,0 +1,41 @@
+@import "../../sass/_variables";
+.header-top {
+  // background-color: #252a2b;
+  background-color: rgba(204, 204, 204, 0.822);
+  &__container {
+    padding: 7px 15px;
+  }
+  &__left {
+    p {
+      // color: #252a2b;
+      // margin-right: 15px;
+      &:nth-child(2) {
+        font-style: italic;
+        font-size: $fs-14;
+        // font-weight: 600;
+        // letter-spacing: 1px;
+      }
+    }
+  }
+  &__right {
+    span {
+      margin-right: 7px;
+      color: #252a2b;
+      display: block;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .header-top {
+    &__left {
+      p {
+        font-size: $fs-12;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .header-top {
+    display: none;
+  }
+}
