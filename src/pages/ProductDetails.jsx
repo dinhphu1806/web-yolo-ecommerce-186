@@ -45,18 +45,20 @@ import ThumbnailsSlide from "../components/ThumbnailsSlide/ThumbnailsSlide";
 
 const ProductDetails = ({ products }) => {
   const [numQuantity, setNumQuantity] = useState(1);
+  // console.log(numQuantity);
+
   const [productSingle, setProductSingle] = useState([]);
 
   const { id } = useParams();
 
   const dispatch = useDispatch();
 
-  const { productName, imgUrl, imgDetails, description, price, quantity } =
-    productSingle;
+  const { productName, imgUrl, imgDetails, description, price, quantity } = productSingle;
 
-  // console.log(imgDetails.imgDetails[0]);
   // const { cart } = useSelector((state) => state.cart);
   const product = products.find((item) => item.id === id);
+  console.log(product);
+
   // set  single product details
   const setViewProductSingle = () => {
     try {
@@ -82,17 +84,22 @@ const ProductDetails = ({ products }) => {
 
   useEffect(() => {
     setViewProductSingle();
+    
     getViewProductSingle();
+
     // setViewRelatedProducts();
-  }, []);
+  }, [product]);
 
   // handle increament
   const handleIncreament = () => {
     // console.log(increamentItem(id));
     // dispatch(increamentItem(id));
+
     setNumQuantity((prev) => {
       let temmQty = prev + 1;
-      if (temmQty > price) temmQty = price;
+      if (temmQty > price) {
+        temmQty = price
+      };
       return temmQty;
     });
   };
@@ -104,20 +111,25 @@ const ProductDetails = ({ products }) => {
 
     setNumQuantity((prev) => {
       let temQty = prev - 1;
-      if (temQty < 1) temQty = 1;
+      if (temQty < 1) {
+        temQty = 1
+      };
       return temQty;
     });
   };
 
   // add to cart use distpatch
   const handleAddToCart = () => {
+    
+    console.log(numQuantity, 'num');
     dispatch(
       addToCart({
         id: id,
         productName: productName,
         imgUrl: imgUrl,
         price: price,
-        quantity: quantity,
+        quantity: numQuantity,
+        isProduct: false
       })
     );
     toast.success("Thêm vào giỏ hàng thành công !", {

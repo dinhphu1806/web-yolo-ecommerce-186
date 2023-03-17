@@ -8,7 +8,6 @@ import News from "../pages/News";
 import NotFound from "../pages/NotFound";
 import ProductDetails from "../pages/ProductDetails";
 import Register from "../pages/Register";
-import Shop from "../pages/Shop";
 
 import client from "../api/axiosClient";
 import Checkout from "../pages/Checkout";

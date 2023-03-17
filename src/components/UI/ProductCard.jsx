@@ -44,7 +44,9 @@ const ProductCard = ({ item }) => {
         productName: productName,
         imgUrl: imgUrl,
         price: price,
-        quantity: quantity,
+        // quantity: quantity,
+        // quantity: 1,
+        isProductCard: true
       })
     );
     toast.success("Thêm vào giỏ hàng thành công !", {

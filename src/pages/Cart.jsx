@@ -43,7 +43,10 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Cart = () => {
-  const { cart } = useSelector((state) => state.cart);
+  const { cart } = useSelector((state) => state.cart); 
+
+  console.log(cart, 'cart');
+  // console.log(state, "state");
   // console.log(cart);
 
   // const { id } = cart;

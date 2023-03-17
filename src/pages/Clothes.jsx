@@ -357,16 +357,18 @@ const Clothes = ({ products }) => {
                 </select>
               </div>
               <Item>
-                {product.length === 0 && (
+                {product.length === 0 ? (
                   <h1
                     style={{ textTransform: "unset" }}
                     className="w-full text-center fs-16 mt-2 fw-700"
                   >
-                    Không tìm thấy sản phẩm 😎
+                    Loading ...
                   </h1>
-                )}
+                ) :(
+                  <ProductList data={product} />
+                ) }
 
-                <ProductList data={product} />
+                
               </Item>
             </Grid>
           </Grid>

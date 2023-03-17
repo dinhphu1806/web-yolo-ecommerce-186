@@ -14,6 +14,7 @@ const setItemFunc = (item) => {
 const initialState = {
   // cart: [],
   cart: items,
+
 };
 
 const cartSlice = createSlice({
@@ -22,6 +23,7 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const newItem = action.payload;
+      console.log(newItem, 'newItem');
       const cartItem = state.cart.find((item) => item.id === newItem.id);
 
       if (cartItem) {
@@ -33,7 +35,8 @@ const cartSlice = createSlice({
           // imgUrl: newItem.imgUrl,
           // price: newItem.price,
           ...newItem,
-          quantity: 1,
+          // quantity: 1,
+          quantity: newItem.isProductCard ? 1 : newItem.quantity
         });
       }
       setItemFunc(state.cart.map((item) => item));
