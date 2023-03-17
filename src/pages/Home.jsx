@@ -68,7 +68,6 @@ const Home = () => {
           addProducts(res?.data)
         );
        
-      
         localStorage.setItem("product", JSON.stringify(filterCoatProducts));
         localStorage.setItem("productAll", JSON.stringify(res.data));
         // return filterCoatProducts;
