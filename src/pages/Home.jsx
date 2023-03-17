@@ -6,7 +6,8 @@ import SliderProduct from "../components/SliderProduct/SliderProduct";
 import ProductList from "../components/UI/ProductList";
 // import "../../style/modalDetails.scss";
 import "../style/modalDetails.scss";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addProductCoat, addProducts } from "../redux/slice/productSlice";
 
 import { IoMdFlash } from "react-icons/io";
 // import { ScaleLoader } from "react-spinners";
@@ -30,8 +31,10 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   // const [coatProducts, setCoatProducts] = useState([]);
   // const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch()
 
   const { IsModal } = useSelector((state) => state.modal);
+  
 
   // useEffect(() => {
   //   try {
@@ -60,7 +63,12 @@ const Home = () => {
         // console.log(res.data);
         const filterCoatProducts = res.data.filter(
           (item) => item.category === "coat"
+        );  
+        dispatch(
+          addProducts(res?.data)
         );
+       
+      
         localStorage.setItem("product", JSON.stringify(filterCoatProducts));
         localStorage.setItem("productAll", JSON.stringify(res.data));
         // return filterCoatProducts;

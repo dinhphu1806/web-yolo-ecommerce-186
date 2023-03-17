@@ -49,6 +49,7 @@ const ProductCard = ({ item }) => {
         isProductCard: true
       })
     );
+    
     toast.success("Thêm vào giỏ hàng thành công !", {
       position: "top-center",
     });
