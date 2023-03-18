@@ -7,7 +7,8 @@ const initialState = {
     productHats: [],
     productShoes: [],
     productBags: [],
-    productBelts: []
+    productBelts: [],
+    productShirts: []
 }
 
 const productSlice = createSlice({
@@ -46,6 +47,10 @@ const productSlice = createSlice({
         const newItem = action.payload;
         state.productBelts = newItem
       },
+      addProductShirts: (state, action) => {
+        const newItem = action.payload;
+        state.productShirts = newItem
+      },
   }
 });
 
@@ -56,7 +61,8 @@ export const {
     addProductHats,
     addProductShoes,
     addProductBags,
-    addProductBelts
+    addProductBelts,
+    addProductShirts
 } = productSlice.actions
 
 export default productSlice.reducer

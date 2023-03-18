@@ -46,21 +46,12 @@ const ProductCoat = () => {
     getDataFromStorage();
     // getDataFromStorage();
   }, []);
+  
   return (
-    <div>
-      <div className="secsion flex flex-between">
-        <div className="heading__title flex">
-          <h1 className="fs-20 fw-500">Sản phẩm mới nhất</h1>
-          <span>
-            <IoMdFlash className="fs-25 fw-500" style={{ color: "red" }} />
-          </span>
-        </div>
-        <Link to="/shop">Xem chi tiết ...</Link>
-      </div>
       <div className="product__list">
         <ProductList data={productCoats} />
       </div>
-    </div>
+   
   );
 };
 

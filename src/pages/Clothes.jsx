@@ -226,14 +226,22 @@ const Clothes = ({ products }) => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
-                    <Typography style={styleTitle}>Áo khoắc</Typography>
+                    <Typography style={styleTitle}>Áo nam</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography
                       style={style}
                       onClick={() => filterProduct("coat")}
                     >
-                      Áo khoắc nam
+                      Áo khoắc
+                    </Typography>
+                  </AccordionDetails>
+                  <AccordionDetails>
+                    <Typography
+                      style={style}
+                      onClick={() => filterProduct("shirt")}
+                    >
+                      Áo sơ mi
                     </Typography>
                   </AccordionDetails>
                 </Accordion>

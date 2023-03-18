@@ -26,6 +26,7 @@ import TrouserTab from "../components/UI/TrouserTab";
 
 import ReceiveInfo from "../components/ReceiveInfo/ReceiveInfo";
 import ProductCoat from "../components/UI/ProductCoat";
+import ProductShirt from "../components/UI/ProductShirt";
 
 const Home = () => {
   // const [products, setProducts] = useState([]);
@@ -108,6 +109,7 @@ const Home = () => {
       <Policy />
 
       {/* {loading && <h1>Loading ... </h1>} */}
+      {/* new firts product */}
       <div className="secsion">
          <div className="secsion flex flex-between">
           <div className="heading__title flex">
@@ -128,20 +130,19 @@ const Home = () => {
       <div className="secsion">
         <TrouserTab />
       </div>
-      {/* trousers */}
-      {/* <div>
-        <div className="secsion flex flex-between">
+      {/* shirt */}
+      <div className="secsion">
+         <div className="secsion flex flex-between">
           <div className="heading__title flex">
-            <h1 className="fs-20 fw-500">Quần âu</h1>
+            <h1 className="fs-20 fw-500">Áo sơ mi</h1>
+            <span>
+              <IoMdFlash className="fs-25 fw-500" style={{ color: "red" }} />
+            </span>
           </div>
-
-          <a href="">Xem chi tiết ...</a>
+          <Link to="/shop">Xem chi tiết ...</Link>
         </div>
-        <div className="product__list flex flex-between">
-          <ProductTrousers />
-        </div>
-      </div> */}
-
+        <ProductShirt />
+      </div>
       {/* slick slider product */}
       <div className="secsion slider">
         <div
