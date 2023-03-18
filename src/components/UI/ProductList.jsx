@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
+const ProductList = ({data}) => {
   // console.log(data);
   // const [coatProducts, setCoatProducts] = useState([]);
 
@@ -22,13 +22,13 @@ const ProductList = () => {
   // useEffect(() => {
   //   getDataFromStorage();
   // }, []);
-  const { products } = useSelector((state) => state.products);
-  console.log(products, 'productlist');
+  // const { products } = useSelector((state) => state.products);
+  // console.log(products, 'productlist');
 
   return (
     <Box>
       <Grid container spacing={2} rowSpacing={2} className="product">
-        {products?.map((item) => {
+        {data?.map((item) => {
           return <ProductCard key={item.id} item={item} />;
         })}
       </Grid>

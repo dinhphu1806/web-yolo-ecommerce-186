@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import "../style/home.scss";
 import Hero from "../components/Hero/Hero";
 import Policy from "../components/Policy/Policy";
 import SliderProduct from "../components/SliderProduct/SliderProduct";
-import ProductList from "../components/UI/ProductList";
+// import ProductList from "../components/UI/ProductList";
 // import "../../style/modalDetails.scss";
 import "../style/modalDetails.scss";
-import { useSelector, useDispatch } from "react-redux";
-import { addProductCoat, addProducts } from "../redux/slice/productSlice";
+import {  useDispatch } from "react-redux";
+import { addProducts } from "../redux/slice/productSlice";
 
 import { IoMdFlash } from "react-icons/io";
 // import { ScaleLoader } from "react-spinners";
@@ -28,12 +28,12 @@ import ReceiveInfo from "../components/ReceiveInfo/ReceiveInfo";
 import ProductCoat from "../components/UI/ProductCoat";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   // const [coatProducts, setCoatProducts] = useState([]);
   // const [loading, setLoading] = useState(false);
   const dispatch = useDispatch()
 
-  const { IsModal } = useSelector((state) => state.modal);
+  // const { IsModal } = useSelector((state) => state.modal);
   
 
   // useEffect(() => {
@@ -53,23 +53,20 @@ const Home = () => {
   //   }
   // }, []);
 
-  const setDataToStorage = async () => {
+  const getDataToStorage = async () => {
     try {
       // setLoading(true);
       const res = await client.get("/products");
       // console.log(res.data);
       if (typeof res.data !== "string") {
-        // localStorage.setItem("product", JSON.stringify(res.data));
-        // console.log(res.data);
-        const filterCoatProducts = res.data.filter(
-          (item) => item.category === "coat"
-        );  
-        dispatch(
-          addProducts(res?.data)
-        );
-       
-        localStorage.setItem("product", JSON.stringify(filterCoatProducts));
-        localStorage.setItem("productAll", JSON.stringify(res.data));
+        // const filterCoatProducts = res.data.filter(
+        //   (item) => item.category === "coat"
+        // );  
+        dispatch(addProducts(res?.data));
+          // addProducts(filterCoatProducts)
+        
+        // localStorage.setItem("product", JSON.stringify(filterCoatProducts));
+        // localStorage.setItem("productAll", JSON.stringify(res.data));
         // return filterCoatProducts;
       }
     } catch (error) {
@@ -98,7 +95,7 @@ const Home = () => {
   ////////////////
 
   useEffect(() => {
-    setDataToStorage();
+    getDataToStorage();
     // getDataFromStorage();
   }, []);
   // console.log(coatProducts);
@@ -112,7 +109,7 @@ const Home = () => {
 
       {/* {loading && <h1>Loading ... </h1>} */}
       <div className="secsion">
-        {/* <div className="secsion flex flex-between">
+         <div className="secsion flex flex-between">
           <div className="heading__title flex">
             <h1 className="fs-20 fw-500">Sản phẩm mới nhất</h1>
             <span>
@@ -121,7 +118,7 @@ const Home = () => {
           </div>
           <Link to="/shop">Xem chi tiết ...</Link>
         </div>
-        <div className="product__list">
+        {/* <div className="product__list">
           <ProductList data={coatProducts} />
         </div> */}
         <ProductCoat />
