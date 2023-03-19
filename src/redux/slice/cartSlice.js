@@ -6,7 +6,7 @@ const items =
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
 
-// func get cart from LocalStorage
+//  get cart from LocalStorage
 const setItemFunc = (item) => {
   localStorage.setItem("cartItems", JSON.stringify(item));
 };

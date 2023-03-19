@@ -44,6 +44,8 @@ import AddIcon from "@mui/icons-material/Add";
 import ThumbnailsSlide from "../components/ThumbnailsSlide/ThumbnailsSlide";
 
 const ProductDetails = ({ products }) => {
+
+  // use when create variables num
   const [numQuantity, setNumQuantity] = useState(1);
   // console.log(numQuantity);
 
@@ -129,7 +131,7 @@ const ProductDetails = ({ products }) => {
         imgUrl: imgUrl,
         price: price,
         quantity: numQuantity,
-        isProduct: false
+        isProductCard: false
       })
     );
     toast.success("Thêm vào giỏ hàng thành công !", {

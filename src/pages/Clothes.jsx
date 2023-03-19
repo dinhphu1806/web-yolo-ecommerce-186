@@ -5,12 +5,17 @@ import { BiCategory, BiSearch } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 
+import { useSelector, useDispatch } from "react-redux";
+import { addFilterProducts } from "../redux/slice/categoryProduct";
+import { addSearchProducts } from "../redux/slice/categoryProduct";
+// import { addSortProducts } from "../redux/slice/categoryProduct";
+
 // select option
 // import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+// import InputLabel from "@mui/material/InputLabel";
+// import MenuItem from "@mui/material/MenuItem";
+// import FormControl from "@mui/material/FormControl";
+// import Select from "@mui/material/Select";
 // accordion
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -24,8 +29,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import ProductList from "../components/UI/ProductList";
-import Button from "@mui/material/Button";
-import { logDOM } from "@testing-library/react";
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -58,6 +62,10 @@ const Clothes = ({ products }) => {
   const [data, setData] = useState([]);
   const [product, setProduct] = useState(data);
 
+  const dispatch = useDispatch()
+  const { filterProducts } = useSelector(state => state.categoryProduct)
+  const { searchProducts } = useSelector(state => state.categoryProduct)
+  
   let componentMounted = true;
 
   useEffect(() => {
@@ -76,6 +84,7 @@ const Clothes = ({ products }) => {
       };
     };
     getProducts();
+   
   }, []);
 
   // console.log(data);
@@ -88,11 +97,15 @@ const Clothes = ({ products }) => {
 
   const filterProduct = (cat) => {
     const updatedList = data.filter((item) => item.category === cat);
-    localStorage.setItem("filterList", JSON.stringify(updatedList));
-    const dataLocal = localStorage.getItem("filterList");
-    const da = dataLocal !== null ? JSON.parse(dataLocal) : [];
-    // console.log(da);
-    setProduct(da);
+
+    console.log(addFilterProducts(updatedList));
+    dispatch(addFilterProducts(updatedList))
+    setProduct(filterProducts)
+    // localStorage.setItem("filterList", JSON.stringify(updatedList));
+    // const dataLocal = localStorage.getItem("filterList");
+    // const da = dataLocal !== null ? JSON.parse(dataLocal) : [];
+    // // console.log(da);
+    // setProduct(da);
   };
 
   // const getFilterProductFromStorage = () => {
@@ -110,11 +123,14 @@ const Clothes = ({ products }) => {
     const searchProduct = data.filter((item) => {
       return item.productName.toLowerCase().includes(searchValue.toLowerCase());
     });
-    localStorage.setItem("searchProduct", JSON.stringify(searchProduct));
-    // setData(dataSearch);
-    const dt = JSON.parse(localStorage.getItem("searchProduct"));
-    // console.log(dt);
-    setProduct(dt);
+
+    dispatch(addSearchProducts(searchProduct))
+    setProduct(searchProducts)
+    // localStorage.setItem("searchProduct", JSON.stringify(searchProduct));
+    // // setData(dataSearch);
+    // const dt = JSON.parse(localStorage.getItem("searchProduct"));
+    // // console.log(dt);
+    // setProduct(dt);
   };
 
   // const getDataSearchProductFromStorage = () => {
@@ -170,6 +186,8 @@ const Clothes = ({ products }) => {
           break;
       }
       let currentSort = [...product];
+
+      // dispatch(addSortProducts(currentSort))
       localStorage.setItem("sortProduct", JSON.stringify(currentSort));
       // console.log(currentSort);
 
