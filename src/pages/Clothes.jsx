@@ -393,8 +393,6 @@ const Clothes = ({ products }) => {
                 ) :(
                   <ProductList data={product} />
                 ) }
-
-                
               </Item>
             </Grid>
           </Grid>

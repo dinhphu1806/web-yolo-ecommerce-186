@@ -3,19 +3,65 @@ import "./header.scss";
 import { menuData } from "./MenuItem";
 import { NavLink } from "react-router-dom";
 
+// redux
+import { useDispatch, useSelector } from "react-redux";
+import { addLoginAuth } from "../../redux/slice/authenSlice";
+
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { FaUserCircle, FaBars } from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
 import { ImCross } from "react-icons/im";
+import { FiLogOut } from 'react-icons/fi';
 
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
+
+// auth change
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase/firebase.config";
+
+// logout
+import { signOut } from 'firebase/auth';
+import { toast } from "react-toastify";
+// import { auth } from "../../firebase/firebase.config";
 
 const Header = () => {
+  const dispatch = useDispatch()
+  const { loginAuth } = useSelector(state => state.authen)
   const [openMobile, setOpenMobile] = useState(false);
-
+  const [ displayName, setDisplayName ] = useState({})
+ 
   const navigate = useNavigate();
 
+  // handle logout
+  const handleLogOut = () => {
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        toast.success("Đăng xuất thành công")
+        navigate("/")
+      }).catch((error) => {
+        // toast.error("error.message")
+        toast.error(error.message);
+    });
+  }
+
+   // auth change
+  //  const [ displayName, setDisplayName ] = useState({})
+
+   useEffect(() => {
+     onAuthStateChanged(auth, (user) => {
+       if (user) {
+         const uid = user.uid;
+         console.log(user.displayName); // null
+         // setDisplayName(user.displayName)
+         dispatch(addLoginAuth(user.displayName))
+         setDisplayName(loginAuth)
+         
+       } else {
+         setDisplayName('')
+       }
+     });
+   })
   // use when total quantity
   const { cart } = useSelector((state) => state.cart);
 
@@ -124,10 +170,13 @@ const Header = () => {
 
         {/* icon cart, user, bars*/}
         <div className="header__icon flex relative">
+      
           {/* icon__cart */}
           <div
             className="header__icon__cart flex flex-center relative"
             onClick={() => navigate("/cart")}
+            style={{marginRight: '20px', cursor: 'pointer'}}
+            title="Giỏ hàng"
           >
             <HiOutlineShoppingBag className="cart fs-18" />
             <span
@@ -138,10 +187,23 @@ const Header = () => {
             </span>
           </div>
 
+          {/* auth change */}
+          {displayName ? `Hi, ${displayName}` : ""}
+
           {/* icon__user */}
-          <NavLink to="/login">
-            <FaUserCircle className="header__icon__user " />
-          </NavLink>
+          {displayName ? '' : (
+              <NavLink to="/login">
+                <FaUserCircle className="header__icon__user " />
+              </NavLink>
+          )}
+
+           {/* auth change */}
+          
+           <NavLink to='' onClick={handleLogOut} style={{marginLeft: '5px', cursor: 'pointer', color:'#000'}} title='Đăng xuất'>
+              {displayName ? (
+                <FiLogOut />
+              ) : ''}
+           </NavLink>
         </div>
       </div>
     </div>

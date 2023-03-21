@@ -5,25 +5,84 @@ import { AiFillFacebook, AiOutlineGooglePlus } from "react-icons/ai";
 
 import { NavLink, useNavigate } from "react-router-dom";
 
+// create email and password in firebase doc
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase/firebase.config';
+import { toast } from "react-toastify";
+import Loader from "../components/Loader/Loader";
+
+// login google
+import { GoogleAuthProvider,  signInWithPopup } from "firebase/auth";
+//  login fb
+import { FacebookAuthProvider } from "firebase/auth";
+
 const Login = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRemember, setIsRemember] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmitLogin = (e) => {
-    setIsLoading(!isLoading);
+  const handleSubmitLogin = async (e) => {
     e.preventDefault();
-    // if (isRemember) {
+    setLoading(true);
+    // if (!isRemember) {
     //   alert("Bạn điền thiếu thông tin");
     // }
-    console.log({ email, password, isRemember });
-    alert("Đăng nhập thành công");
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password)
+      const user = userCredential.user
 
-    navigate("/");
+      console.log(user)
+      setLoading(false) 
+      // toast.success('Successfully logged in')
+      // alert("Login successfully")
+      toast.success("Đăng nhập thành công ")
+      navigate('/')
+    } catch (error) {
+      setLoading(false)
+      toast.error(error.message)
+    }
   };
+
+  // handle login with google
+
+  const handleLoginWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    setLoading(true)
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      setLoading(false)
+      // alert("Successfully")
+      toast.success("Đăng nhập thành công")
+      navigate('/')
+    }).catch((error) => {
+      setLoading(false)
+      // setError(error.message)
+      toast.error(error.message)
+      // console.log(error.message);
+    });
+  }
+
+  // handle login with facebook
+ 
+  const handleLoginFacebook = () => {
+    const provider = new FacebookAuthProvider();
+    setLoading(true)
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result);
+      setLoading(false)
+      toast.success("Đăng nhập thành công")
+      navigate('/')
+    }).catch((error) => {
+      setLoading(false)
+      toast.error(error.message)
+    })
+  }
+
 
   return (
     <div className="login">
@@ -45,10 +104,8 @@ const Login = () => {
           <h1 className="fs-18 fw-600 uppercase">Đăng nhập tài khoản</h1>
           <hr className="w-full px-1" />
         </div>
-        {isLoading ? (
-          <div>
-            <h1>Loading ... </h1>
-          </div>
+        {loading ? (
+          <Loader />
         ) : (
           <div className="login__body relative">
             <div className="login__body__container">
@@ -67,6 +124,7 @@ const Login = () => {
                       backgroundColor: "#3B5998",
                       color: "#fff",
                     }}
+                    onClick={handleLoginFacebook}
                   >
                     <AiFillFacebook
                       style={{ marginRight: "5px" }}
@@ -81,6 +139,7 @@ const Login = () => {
                       backgroundColor: "#E14B33",
                       color: "#fff",
                     }}
+                    onClick={handleLoginWithGoogle}
                   >
                     <AiOutlineGooglePlus
                       style={{ marginRight: "5px" }}
@@ -102,7 +161,7 @@ const Login = () => {
                   <input
                     type="email"
                     id="email"
-                    autoComplete="false"
+                    // autoComplete="false"
                     required
                     placeholder="Email"
                     value={email}
