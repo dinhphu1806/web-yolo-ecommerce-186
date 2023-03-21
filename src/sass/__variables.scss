@@ -7,12 +7,12 @@ $bg-grey: #808080;
 //color
 $color-black: #000;
 $color-white: #fff;
-$color-regal-blue: #103755;
-$color-gold: #eeb808;
-$color-light-blue: #707b8e;
-$color-pine-green: #63766b;
-$color-ghost-white: #f8f8fa;
-$color-dark: #575f64a1;
+// $color-regal-blue: #103755;
+// $color-gold: #eeb808;
+// $color-light-blue: #707b8e;
+// $color-pine-green: #63766b;
+// $color-ghost-white: #f8f8fa;
+// $color-dark: #575f64a1;
 $color-red: #ce4f4b;
 
 // font-family
@@ -50,21 +50,21 @@ $fs-30: 30px;
   &-center {
     text-align: center;
   }
-  &-start {
-    text-align: left;
-  }
-  &-end {
-    text-align: right;
-  }
+  // &-start {
+  //   text-align: left;
+  // }
+  // &-end {
+  //   text-align: right;
+  // }
   &-justify {
     text-align: justify;
   }
   &-uppercase {
     text-transform: uppercase;
   }
-  &-capitalize {
-    text-transform: capitalize;
-  }
+  // &-capitalize {
+  //   text-transform: capitalize;
+  // }
   // &-regal-blue {
   //   color: $color-regal-blue;
   // }
@@ -362,12 +362,12 @@ $fs-30: 30px;
   &-around {
     justify-content: space-around;
   }
-  &-start {
-    justify-content: flex-start;
-  }
-  &-end {
-    justify-content: flex-end;
-  }
+  // &-start {
+  //   justify-content: flex-start;
+  // }
+  // &-end {
+  //   justify-content: flex-end;
+  // }
   &-wrap {
     flex-wrap: wrap;
   }
