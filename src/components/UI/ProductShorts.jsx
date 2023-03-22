@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProductJeans } from "../../redux/slice/productSlice";
+import { addProductShorts } from "../../redux/slice/productSlice";
 import client from "../../api/axiosClient";
 import ProductList from "./ProductList";
 
-const ProductJeans = () => {
+const ProductShorts = () => {
   // const [bagProducts, setBagProducts] = useState([]);
 
   const dispatch = useDispatch()
 
-  const { productJeans } = useSelector(state => state.products)
+  const { productShorts } = useSelector(state => state.products)
 
   // set bag to Storage
-  const getJeanProducts = async () => {
+  const getShortProducts = async () => {
     const res = await client.get("/products");
     // console.log(res.data);
     if (typeof res.data !== "string") {
-      const filterJeanProducts = res.data.filter(
-        (item) => item.category === "jeans"
+      const filterShortProducts = res.data.filter(
+        (item) => item.category === "short"
       );
         // console.log(filterBagProducts, '-----');
-        dispatch( addProductJeans(filterJeanProducts))
+        dispatch( addProductShorts(filterShortProducts))
       // localStorage.setItem("bag", JSON.stringify(filterBagProducts));
     }
   };
@@ -33,15 +33,15 @@ const ProductJeans = () => {
   //   setBagProducts(d);
   // };
   useEffect(() => {
-    getJeanProducts();
+    getShortProducts();
     // getBagProductsFromStorage();
   }, []);
 
   return (
     <div>
-      <ProductList data={productJeans} />
+      <ProductList data={productShorts} />
     </div>
   );
 };
 
-export default ProductJeans;
+export default ProductShorts;

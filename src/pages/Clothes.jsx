@@ -280,13 +280,28 @@ const Clothes = ({ products }) => {
                     </Typography>
                   </AccordionDetails>
                   <AccordionDetails>
-                    <Typography style={style}>Quần jean</Typography>
+                    <Typography 
+                      style={style} 
+                      onClick={() => filterProduct("jeans")}
+                    >
+                    Quần jean
+                    </Typography>
                   </AccordionDetails>
                   <AccordionDetails>
-                    <Typography style={style}>Quần sort</Typography>
+                    <Typography 
+                      style={style}
+                      onClick={() => filterProduct("short")}
+                    >
+                      Quần short
+                    </Typography>
                   </AccordionDetails>
                   <AccordionDetails>
-                    <Typography style={style}>Quần nỉ dài</Typography>
+                    <Typography 
+                      style={style}
+                      onClick={() => filterProduct("felt-pants")}
+                    >
+                      Quần nỉ dài
+                    </Typography>
                   </AccordionDetails>
                 </Accordion>
                 <Accordion>

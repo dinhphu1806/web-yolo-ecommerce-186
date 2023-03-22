@@ -8,7 +8,10 @@ const initialState = {
     productShoes: [],
     productBags: [],
     productBelts: [],
-    productShirts: []
+    productShirts: [],
+    productJeans: [],
+    productShorts: [],
+    productFeltPants: []
 }
 
 const productSlice = createSlice({
@@ -51,6 +54,18 @@ const productSlice = createSlice({
         const newItem = action.payload;
         state.productShirts = newItem
       },
+      addProductJeans: (state, action) => {
+        const newItem = action.payload;
+        state.productJeans = newItem
+      },
+      addProductShorts: (state, action) => {
+        const newItem = action.payload;
+        state.productShorts = newItem
+      },
+      addProductFeltPants: (state, action) => {
+        const newItem = action.payload;
+        state.productFeltPants = newItem
+      },
   }
 });
 
@@ -62,7 +77,10 @@ export const {
     addProductShoes,
     addProductBags,
     addProductBelts,
-    addProductShirts
+    addProductShirts,
+    addProductJeans,
+    addProductShorts,
+    addProductFeltPants
 } = productSlice.actions
 
 export default productSlice.reducer

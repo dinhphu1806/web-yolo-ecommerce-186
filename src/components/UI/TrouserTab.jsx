@@ -10,8 +10,9 @@ import Box from "@mui/material/Box";
 
 import ProductTrousers from "./ProductTrousers";
 import ProductJeans from "./ProductJeans";
-import ProductSorts from "./ProductSorts";
-import ProductSweatPants from "./ProductSweatPants";
+import ProductShorts from "./ProductShorts";
+import ProductFeltPants from "./ProductFeltPants";
+
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -67,7 +68,7 @@ export default function TrouserTab() {
             >
               <Tab label="Quần âu" {...a11yProps(0)} />
               <Tab label="Quần jeans" {...a11yProps(1)} />
-              <Tab label="Quần sort" {...a11yProps(2)} />
+              <Tab label="Quần short" {...a11yProps(2)} />
               <Tab label="Quần nỉ dài" {...a11yProps(3)} />
             </Tabs>
           </Box>
@@ -80,10 +81,10 @@ export default function TrouserTab() {
           <ProductJeans />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <ProductSorts />
+          <ProductShorts />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          <ProductSweatPants />
+          <ProductFeltPants />
         </TabPanel>
       </Box>
     </Box>
